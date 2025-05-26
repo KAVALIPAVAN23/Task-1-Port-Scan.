@@ -1,0 +1,80 @@
+Microsoft Windows [Version 10.0.26100.4061]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\kaval>ipconfig
+
+Windows IP Configuration
+
+
+Wireless LAN adapter Local Area Connection* 1:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Local Area Connection* 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . :
+   IPv6 Address. . . . . . . . . . . : 2409:408c:1d8a:c516:8b19:5337:f3fc:e336
+   Temporary IPv6 Address. . . . . . : 2409:408c:1d8a:c516:f951:9e23:ab95:f71b
+   Link-local IPv6 Address . . . . . : fe80::9b7a:c138:b165:5f98%13
+   IPv4 Address. . . . . . . . . . . : 192.168.43.186
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : fe80::3c54:14ff:fe78:602%13
+                                       192.168.43.163
+
+Ethernet adapter Bluetooth Network Connection:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+C:\Users\kaval>nmap -sS 192.168.43.186
+Starting Nmap 7.97 ( https://nmap.org ) at 2025-05-26 22:44 +0530
+Nmap scan report for 192.168.43.186
+Host is up (0.00082s latency).
+Not shown: 996 closed tcp ports (reset)
+PORT     STATE SERVICE
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+3306/tcp open  mysql
+
+Nmap done: 1 IP address (1 host up) scanned in 2.16 seconds
+
+C:\Users\kaval>nmap -sS 192.168.43.186 -oN scan_results.txt
+Starting Nmap 7.97 ( https://nmap.org ) at 2025-05-26 22:45 +0530
+Nmap scan report for 192.168.43.186
+Host is up (0.00013s latency).
+Not shown: 996 closed tcp ports (reset)
+PORT     STATE SERVICE
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+3306/tcp open  mysql
+
+Nmap done: 1 IP address (1 host up) scanned in 0.90 seconds
+
+C:\Users\kaval>nmap -sS 192.168.43.186 -oX scan.xml
+Starting Nmap 7.97 ( https://nmap.org ) at 2025-05-26 22:46 +0530
+Stats: 0:00:00 elapsed; 0 hosts completed (0 up), 0 undergoing Host Discovery
+Parallel DNS resolution of 1 host. Timing: About 0.00% done
+Nmap scan report for 192.168.43.186
+Host is up (0.00069s latency).
+Not shown: 996 closed tcp ports (reset)
+PORT     STATE SERVICE
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+3306/tcp open  mysql
+
+Nmap done: 1 IP address (1 host up) scanned in 0.89 seconds
+
+C:\Users\kaval>scan_results.txt
+
+C:\Users\kaval>scan.html
+'scan.html' is not recognized as an internal or external command,
+operable program or batch file.
